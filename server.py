@@ -10,43 +10,9 @@ def hello_world():
     return render_template('index.html')
 
 
-# @app.route("/index.html")
-# def hello_world2():
-#     return render_template('index.html')
-#
-# @app.route("/about.html")
-# def about():
-#     return render_template('about.html')
-#
-# @app.route("/components.html")
-# def components():
-#     return render_template('components.html')
-#
-# @app.route("/contact.html")
-# def contact():
-#     return render_template('contact.html')
-#
-# @app.route("/works.html")
-# def works():
-#     return render_template('works.html')
-#
-# @app.route("/work.html")
-# def work():
-#     return render_template('work.html')
-
 @app.route("/<string:page_name>")
 def html_page(page_name=None):
     return render_template(f'{page_name}')
-
-
-@app.route("/blogs")
-def blogs():
-    return "These are my thoughts on the blogs"
-
-
-@app.route("/blogs/dogs/2022")
-def blogs_dogs_2022():
-    return "Hi these are the dogs from 2022"
 
 
 @app.route('/submit_form', methods=['POST', 'GET'])
